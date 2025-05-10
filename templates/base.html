@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }} | Mi Portafolio Gamer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;800&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-text">GAMER<span>DEV</span></div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('inicio') }}" class="nav-link {% if titulo == 'Inicio' %}active{% endif %}">
+                        <i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li><a href="{{ url_for('sobre_mi') }}" class="nav-link {% if titulo == 'Sobre Mí' %}active{% endif %}">
+                        <i class="fas fa-user"></i> Sobre Mí</a>
+                    </li>
+                    <li><a href="{{ url_for('habilidades') }}" class="nav-link {% if titulo == 'Habilidades' %}active{% endif %}">
+                        <i class="fas fa-cogs"></i> Habilidades</a>
+                    </li>
+                    <li><a href="{{ url_for('proyectos') }}" class="nav-link {% if titulo == 'Proyectos' %}active{% endif %}">
+                        <i class="fas fa-project-diagram"></i> Proyectos</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="content-wrapper">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="socials">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                </div>
+                <p class="copyright">&copy; {{ 2025 }} GAMER<span>DEV</span> | Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

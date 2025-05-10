@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1 class="glitch-text" data-text="DESARROLLADOR GAMER">DESARROLLADOR GAMER</h1>
+        <p class="typing-text">Creando experiencias digitales sorprendentes</p>
+        <div class="cta-container">
+            <a href="{{ url_for('proyectos') }}" class="btn-neon">Ver proyectos</a>
+            <a href="{{ url_for('sobre_mi') }}" class="btn-cyber">Conoce más</a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
